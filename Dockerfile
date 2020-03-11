@@ -47,3 +47,6 @@ RUN mkdir /opencv/build && ls && \
         .. && make && make install && rm -r /opencv && rm -rf /var/lib/apt/lists/ && mkdir /test
 ADD CMakeLists.txt /test
 ADD opencv.cpp /test
+
+RUN apt -y update && apt-get install -y libtesseract-dev tesseract-ocr
+ADD ocr.cpp /test
